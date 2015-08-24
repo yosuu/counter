@@ -1,0 +1,17 @@
+<ion-view view-title="Send Us a Feedback">
+  <ion-content>
+    <form ng-submit="postFeedback()">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" ng-model="feedbackData.name" placeholder="Your Name">
+        </label>
+        <label class="item item-input">
+          <textarea ng-model="feedbackData.feedback" placeholder="Feedback" style="resize: vertical; height: 300px"></textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Send</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

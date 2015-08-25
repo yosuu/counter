@@ -10,7 +10,7 @@ angular.module('counterApp', ['ionic', 'counterApp.controllers'])
 
     }
     if (window.StatusBar) {
-      StatusBar.hide();
+      StatusBar.show();
     }
   });
 })

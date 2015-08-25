@@ -1,1 +1,23 @@
-/* Empty. Add your own CSS if you like */
+.bar .title {
+	top: 4px !important;
+}
+.wrapper {
+	text-align: center;
+}
+.counter {
+	font-size: 140px;
+	margin: 0 auto;
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+.btn-custom {
+	font-size: 100px;
+	width: 50%;
+	height: 80px;
+}
+.row, .scroll {
+  height: 100%;
+}
+.mr-10 {
+	margin-right: 10px;
+}

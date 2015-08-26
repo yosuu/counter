@@ -1,7 +1,8 @@
 angular.module('counterApp.controllers', [])
 
-.controller('HomeCtrl', function($scope) {
+.controller('HomeCtrl', function($scope, $ionicPopup) {
   $scope.counter = 0;
+	$scope.data = {};
 	
 	$scope.plus = function() {
 		$scope.counter = $scope.counter + 1;
@@ -14,8 +15,29 @@ angular.module('counterApp.controllers', [])
 		$scope.counter = 0;
 	};
 	$scope.save = function() {
-		$scope.counter = 999;
-	}
+		var myPopup = $ionicPopup.show({
+			template: '<input type="text" ng-model="data.name">',
+			title: 'Enter name for this result',
+			scope: $scope,
+			buttons: [
+				{ text: 'Cancel' },
+				{
+					text: '<b>Save</b>',
+					type: 'button-positive',
+					onTap: function(e) {
+						if (!$scope.data.name) {
+							e.preventDefault();
+						} else {
+							return $scope.data.name;
+						}
+					}
+				}
+			]
+		});
+		myPopup.then(function(res) {
+				myPopup.close();
+		});
+	};
 })
 
 .controller('HistoryCtrl', function($scope) {
